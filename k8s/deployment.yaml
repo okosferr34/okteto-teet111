@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okteto-teet111
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: okteto-teet111
+  template:
+    metadata:
+      labels:
+        app: okteto-teet111
+    spec:
+      containers:
+      - image: okteto.dev/okteuioy:latest
+        name:okteto-teet111
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "12525c01-3edd-4b67-8cd7-3aa38acd8b80"
+        - name: Vless_Path
+          value: "/12525c01-3edd-4b67-8cd7-3aa38acd8b80"
+        - name: Vmess_UUID
+          value: "12525c01-3edd-4b67-8cd7-3aa38acd8b80"
+        - name: Vmess_Path
+          value: "/12525c01-3edd-4b67-8cd7-3aa38acd8b80"
+        - name: Share_Path
+          value: "/v2link"
